@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="BirthdayProject.Views.BirthdayView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BirthdayProject.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="850" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="185"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="Birthday calculator" Margin="10,10,0,10" HorizontalAlignment="Left" VerticalAlignment="Center"  FontSize="22" />
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="Enter your name: " Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="Enter your surname: " Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+        <TextBlock Grid.Column="0" Grid.Row="3" Text="Enter your email: " Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+        <TextBox  Grid.Column="1" Grid.Row="1" x:Name="TbName" Text="{Binding FirstName,Mode=OneWayToSource}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="125"/>
+        <TextBox  Grid.Column="1" Grid.Row="2" x:Name="TbSurname"  Text="{Binding Surname,Mode=OneWayToSource}"  VerticalAlignment="Center" HorizontalAlignment="Left" Width="125"/>
+        <TextBox  Grid.Column="1" Grid.Row="3" x:Name="TbEmail" Text="{Binding Email,Mode=OneWayToSource}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="125"/>
+
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="Enter your date of birth: " Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16"/>
+        <DatePicker Grid.Column="1" Grid.Row="4"  x:Name="DpBirthday" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" SelectedDate="{Binding Date, Mode=OneWayToSource}" />
+        <Button  Grid.Column="0" Grid.Row="5" x:Name="BCalculate" Width="90" Margin="10,10,0,10" Command ="{Binding ProceedCommand, UpdateSourceTrigger=PropertyChanged}" Content="Proceed" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="#50b56b" Background="#50b56b" FontSize="14" />
+        <TextBlock Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Name="TBName" Text="{Binding FullName, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" ></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Name="TBEmail" Text="{Binding Email, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" ></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" Name="TBDate" Text="{Binding BirthDate, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" ></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2" Name="TBAge" Text="{Binding Age, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" ></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" Name="TBIsAdult" Text="{Binding IsAdult, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" ></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="2" Name="TBWesternZodiac" Text="{Binding WesternZodiac, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" ></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="2" Name="TBChineseZodiac" Text="{Binding ChineseZodiac, Mode=OneWay}" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" ></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="2" Name="TBIsBirthday" Text="{Binding IsBirthday, Mode=OneWay}" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" ></TextBlock>
+    </Grid>
+</UserControl>
